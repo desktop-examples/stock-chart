@@ -1,0 +1,73 @@
+{
+  "name": "stock-chart",
+  "version": "1.0.0",
+  "description": "Displays the time from around the world",
+  "scripts": {
+    "build": "npm run build:prod",
+    "build:dev": "webpack --progress --config webpack.config.dev.js",
+    "build:prod": "webpack --progress --config webpack.config.prod.js",
+    "lint": "tslint -p tsconfig.json -c tslint.yaml",
+    "start": "npm run start:dev",
+    "start:dev": "webpack-dev-server --progress --config webpack.config.dev.js",
+    "test": "jest",
+    "watch": "webpack --progress --colors --watch --config webpack.config.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/reactivemarkets/Desktop/examples/stock-chart.git"
+  },
+  "keywords": [
+    "example",
+    "stocks",
+    "chart"
+  ],
+  "author": "ReactiveMarkets",
+  "license": "ISC",
+  "dependencies": {
+    "d3-dsv": "^1.1.1",
+    "d3-format": "^1.3.2",
+    "d3-time-format": "^2.1.3",
+    "debug": "^4.1.1",
+    "mobx": "^5.13.0",
+    "mobx-react": "^5.4.4",
+    "moment": "^2.24.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-flexview": "^4.0.3",
+    "react-stockcharts": "^0.7.8"
+  },
+  "devDependencies": {
+    "@types/d3-dsv": "^1.0.36",
+    "@types/d3-format": "^1.3.1",
+    "@types/d3-time-format": "^2.1.1",
+    "@types/debug": "0.0.31",
+    "@types/jest": "^24.0.17",
+    "@types/moment-timezone": "^0.5.12",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "^16.8.5",
+    "acorn": "^6.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "jest": "^24.8.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "npm": "^6.10.3",
+    "offline-plugin": "^5.0.7",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "react-test-renderer": "^16.9.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^5.4.5",
+    "tslint": "^5.18.0",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
+  }
+}
