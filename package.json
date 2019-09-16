@@ -58,7 +58,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "react-test-renderer": "^16.9.0",
-    "terser-webpack-plugin": "^2.0.1",
+    "terser-webpack-plugin": "^2.1.0",
     "ts-jest": "^24.1.0",
     "ts-loader": "^6.1.0",
     "tslint": "^5.20.0",
