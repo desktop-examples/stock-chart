@@ -31,7 +31,7 @@
     "mobx": "^5.14.0",
     "mobx-react": "^6.1.3",
     "moment": "^2.24.0",
-    "react": "^16.10.1",
+    "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-flexview": "^4.0.4",
     "react-stockcharts": "^0.7.8"
