@@ -57,7 +57,7 @@
     "offline-plugin": "^5.0.7",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "react-test-renderer": "^16.13.0",
+    "react-test-renderer": "^16.13.1",
     "terser-webpack-plugin": "^2.3.5",
     "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
