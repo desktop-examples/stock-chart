@@ -71,7 +71,7 @@ export class ResponsiveStockChart extends React.Component<IResponsiveStockChart>
                     data={prices}
                     description={description}
                     title={symbol} />
-                <div className="attribution"></div>
+                <div className="attribution" />
             </>
         );
     }

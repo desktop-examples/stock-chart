@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const merge = require("webpack-merge");
 const config = require("./webpack.common.js");
 
@@ -15,9 +14,4 @@ module.exports = merge({
     output: {
         devtoolModuleFilenameTemplate: "[absolute-resource-path]",
     },
-    plugins: [
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: "development",
-        })
-    ]
 }, config);
