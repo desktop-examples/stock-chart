@@ -7,22 +7,20 @@
     "build:dev": "webpack --progress --config webpack.config.dev.js",
     "build:prod": "webpack --progress --config webpack.config.prod.js",
     "lint": "tslint -p tsconfig.json -c tslint.yaml",
-    "start": "npm run start:dev",
-    "start:dev": "webpack-dev-server --progress --config webpack.config.dev.js",
-    "test": "jest",
+    "start": "webpack-dev-server --progress --config webpack.config.dev.js",
     "watch": "webpack --progress --colors --watch --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/reactivemarkets/Desktop/examples/stock-chart.git"
+    "url": "git+https://github.com/desktop-examples/stock-chart.git"
   },
   "keywords": [
     "example",
     "stocks",
     "chart"
   ],
-  "author": "ReactiveMarkets",
-  "license": "ISC",
+  "author": "Reactive Markets",
+  "license": "Apache",
   "dependencies": {
     "d3-dsv": "^1.2.0",
     "d3-format": "^1.4.4",
@@ -41,7 +39,6 @@
     "@types/d3-format": "^1.3.1",
     "@types/d3-time-format": "^2.1.1",
     "@types/debug": "4.1.5",
-    "@types/jest": "^25.2.1",
     "@types/moment-timezone": "^0.5.13",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
@@ -52,14 +49,11 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
-    "jest": "^25.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "offline-plugin": "^5.0.7",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "react-test-renderer": "^16.13.1",
     "terser-webpack-plugin": "^2.3.6",
-    "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.1",
     "tslint": "^6.1.2",
     "tslint-loader": "^3.5.4",

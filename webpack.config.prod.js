@@ -14,7 +14,12 @@ module.exports = merge({
                 parallel: true,
                 terserOptions: {
                     ecma: 6,
-                },
+                    mangle: true,
+                    output: {
+                        comments: false,
+                    },
+                    warnings: false,
+                }
             }),
             new OptimizeCSSAssetsPlugin({
                 cssProcessorPluginOptions: {

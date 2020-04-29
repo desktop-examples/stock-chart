@@ -5,8 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
-const buildFolder = "dist";
-
 module.exports = {
     bail: true,
     entry: {
@@ -15,7 +13,7 @@ module.exports = {
     output: {
         filename: "[name].[chunkhash:8].js",
         chunkFilename: "[name].[chunkhash:8].js",
-        path: path.join(__dirname, buildFolder),
+        path: path.join(__dirname, "public"),
         publicPath: "/"
     },
     resolve: {
@@ -120,7 +118,7 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true,
             },
-            mobile: true,
+            mobile: false,
             title: "Stock Chart"
         }),
     ]
