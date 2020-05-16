@@ -78,9 +78,11 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new CopyWebpackPlugin([{
-            from: 'src/data'
-        }]),
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: 'src/data'
+            }]
+        }),
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash:8].css",
