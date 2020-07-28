@@ -27,7 +27,7 @@
     "d3-time-format": "^2.2.3",
     "debug": "^4.1.1",
     "mobx": "^5.15.4",
-    "mobx-react": "^6.2.3",
+    "mobx-react": "^6.2.4",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
