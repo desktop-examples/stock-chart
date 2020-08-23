@@ -24,7 +24,7 @@
   "dependencies": {
     "d3-dsv": "^1.2.0",
     "d3-format": "^2.0.0",
-    "d3-time-format": "^2.2.3",
+    "d3-time-format": "^3.0.0",
     "debug": "^4.1.1",
     "mobx": "^5.15.6",
     "mobx-react": "^6.2.5",
