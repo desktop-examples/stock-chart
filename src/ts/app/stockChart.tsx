@@ -2,23 +2,24 @@
 import { format } from "d3-format";
 import { timeFormat } from "d3-time-format";
 import * as React from "react";
-import { Chart, ChartCanvas } from "react-stockcharts";
-import { Label } from "react-stockcharts/lib/annotation";
-import { XAxis, YAxis } from "react-stockcharts/lib/axes";
-import {
-    CrossHairCursor,
-    CurrentCoordinate,
-    EdgeIndicator,
-    MouseCoordinateX,
-    MouseCoordinateY,
-} from "react-stockcharts/lib/coordinates";
-import { ema, sma } from "react-stockcharts/lib/indicator";
-import { discontinuousTimeScaleProviderBuilder } from "react-stockcharts/lib/scale";
 import {
     BarSeries,
     CandlestickSeries,
+    Chart,
+    ChartCanvas,
+    CrossHairCursor,
+    CurrentCoordinate,
+    discontinuousTimeScaleProviderBuilder,
+    EdgeIndicator,
+    ema,
+    Label,
     LineSeries,
-} from "react-stockcharts/lib/series";
+    MouseCoordinateX,
+    MouseCoordinateY,
+    sma,
+    XAxis,
+    YAxis,
+} from "react-financial-charts";
 
 interface IStockChartProps {
     readonly data: any[];
@@ -44,7 +45,7 @@ const padding = { top: 30, bottom: 30 };
 const margin = { left: 20, right: 70, top: 20, bottom: 60 };
 const yAxisTickScale = 5;
 
-const tickStrokeOpacity = 0.3;
+const arrowWidth = 10;
 
 const titleFill = "#4682B4";
 const titleFontSize = 12;
@@ -57,12 +58,15 @@ const descriptionX = 0;
 const descriptionY = 25;
 
 const volumeChartId = 2;
-const volumeOpacity = 0.3;
+const volumeStroke = "rgba(70, 130, 180, 0.3)";
 const volumeChartHeightPrecentage = 0.25;
 
 const foreground = "#ffffff";
+const tickStroke = "rgba(255, 255, 255, 0.3)";
 const downColor = "#e74c3c";
+const downFill = "rgba(231, 76, 60, 0.5)";
 const upColor = "#2ecc71";
+const upFill = "rgba(46, 204, 112, 0.5)";
 
 export class StockChart extends React.Component<IStockChartProps, IStockChartState> {
 
@@ -94,6 +98,7 @@ export class StockChart extends React.Component<IStockChartProps, IStockChartSta
                     sourcePath: "volume",
                     windowSize: 50,
                 })
+                .stroke(volumeStroke)
                 .merge((d, c) => { d.smaVolume50 = c; })
                 .accessor((d) => d.smaVolume50);
 
@@ -145,56 +150,57 @@ export class StockChart extends React.Component<IStockChartProps, IStockChartSta
                     <Label
                         x={titleX}
                         y={titleY}
-                        fill={titleFill}
+                        textAlign="left"
+                        fillStyle={titleFill}
                         fontSize={titleFontSize}
-                        text={title}
-                        textAnchor="left" />
+                        text={title} />
 
                     <Label
                         x={descriptionX}
                         y={descriptionY}
-                        fill={descriptionFill}
+                        textAlign="left"
+                        fillStyle={descriptionFill}
                         fontSize={descriptionFontSize}
-                        text={description}
-                        textAnchor="left" />
+                        text={description} />
 
                     <XAxis
                         axisAt="bottom"
-                        opacity={tickStrokeOpacity}
                         orient="bottom"
+                        tickLabelFill={foreground}
                         showDomain={false}
-                        stroke={foreground}
-                        strokeWidth={0}
-                        tickStroke={foreground}
-                        tickStrokeOpacity={0} />
+                        showTicks={false} />
                     <YAxis
                         axisAt="right"
-                        opacity={tickStrokeOpacity}
                         orient="right"
+                        tickLabelFill={foreground}
+                        strokeStyle={tickStroke}
                         ticks={yAxisTickScale}
-                        tickStroke={foreground}
-                        tickStrokeOpacity={0} />
+                        showTicks={false} />
 
                     <MouseCoordinateY
                         at="right"
                         orient="right"
+                        arrowWidth={arrowWidth}
+                        fitToText
                         displayFormat={format(".2f")} />
 
                     <CandlestickSeries
                         stroke={(d) => d.close > d.open ? upColor : downColor}
                         wickStroke={(d) => d.close > d.open ? upColor : downColor}
-                        fill={(d) => d.close > d.open ? upColor : downColor} />
-                    <LineSeries yAccessor={ema26.accessor()} stroke={ema26.stroke()} />
-                    <LineSeries yAccessor={ema12.accessor()} stroke={ema12.stroke()} />
+                        fill={(d) => d.close > d.open ? upFill : downFill} />
+                    <LineSeries yAccessor={ema26.accessor()} strokeStyle={ema26.stroke()} />
+                    <LineSeries yAccessor={ema12.accessor()} strokeStyle={ema12.stroke()} />
 
-                    <CurrentCoordinate yAccessor={ema26.accessor()} fill={ema26.stroke()} />
-                    <CurrentCoordinate yAccessor={ema12.accessor()} fill={ema12.stroke()} />
+                    <CurrentCoordinate yAccessor={ema26.accessor()} fillStyle={ema26.stroke()} />
+                    <CurrentCoordinate yAccessor={ema12.accessor()} fillStyle={ema12.stroke()} />
 
                     <EdgeIndicator
                         itemType="last"
                         orient="right"
                         edgeAt="right"
+                        arrowWidth={arrowWidth}
                         yAccessor={(d) => d.close}
+                        lineStroke={(d) => d.close > d.open ? upColor : downColor}
                         fill={(d) => d.close > d.open ? upColor : downColor} />
                 </Chart>
                 <Chart
@@ -211,14 +217,13 @@ export class StockChart extends React.Component<IStockChartProps, IStockChartSta
                     <BarSeries
                         yAccessor={(d) => d.volume}
                         stroke={false}
-                        opacity={volumeOpacity} />
+                        fillStyle={volumeStroke} />
 
                     <LineSeries
                         yAccessor={smaVolume50.accessor()}
-                        stroke={smaVolume50.stroke()}
-                        strokeOpacity={volumeOpacity} />
+                        strokeStyle={smaVolume50.stroke()} />
                 </Chart>
-                <CrossHairCursor stroke={foreground} />
+                <CrossHairCursor strokeStyle={tickStroke} />
             </ChartCanvas>);
     }
 }

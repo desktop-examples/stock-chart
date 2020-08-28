@@ -26,19 +26,6 @@ module.exports = {
             exclude: /node_modules/,
         },
         {
-            test: /\.tsx?$/,
-            enforce: "pre",
-            use: [{
-                loader: "tslint-loader",
-                options: {
-                    emitErrors: true,
-                    failOnHint: true,
-                    typeCheck: true,
-                    tsConfigFile: "tsconfig.json"
-                }
-            }]
-        },
-        {
             test: /\.js$/,
             enforce: "pre",
             use: "source-map-loader",
