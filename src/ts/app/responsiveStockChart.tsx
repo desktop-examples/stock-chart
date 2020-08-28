@@ -3,8 +3,8 @@ import * as debug from "debug";
 import { observable, runInAction } from "mobx";
 import { inject, observer } from "mobx-react";
 import * as React from "react";
+import { withDeviceRatio, withSize } from "react-financial-charts";
 import FlexView from "react-flexview";
-import { fitDimensions } from "react-stockcharts/lib/helper";
 
 import { IHistoricalPriceStore } from "../stores/pricing/iHistoricalPriceStore";
 import { IOHLCPrice } from "../stores/pricing/iOHLCPrice";
@@ -14,7 +14,7 @@ import { StockChart } from "./stockChart";
 
 const logger = debug("stock-chart:component:responsiveStockChart");
 
-const FittedStockChart = fitDimensions(StockChart);
+const FittedStockChart = withSize()(withDeviceRatio()(StockChart));
 
 interface IResponsiveStockChart {
     readonly description: string;
