@@ -31,7 +31,7 @@
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-financial-charts": "^1.0.0-alpha.11",
+    "react-financial-charts": "^1.0.0-alpha.13",
     "react-flexview": "^6.0.1"
   },
   "devDependencies": {
