@@ -69,7 +69,6 @@ const upColor = "#2ecc71";
 const upFill = "rgba(46, 204, 112, 0.5)";
 
 export class StockChart extends React.Component<IStockChartProps, IStockChartState> {
-
     public constructor(props: IStockChartProps) {
         super(props);
         const { data: inputData } = props;
@@ -185,6 +184,7 @@ export class StockChart extends React.Component<IStockChartProps, IStockChartSta
                         displayFormat={format(".2f")} />
 
                     <CandlestickSeries
+                        candleStrokeWidth={1}
                         stroke={(d) => d.close > d.open ? upColor : downColor}
                         wickStroke={(d) => d.close > d.open ? upColor : downColor}
                         fill={(d) => d.close > d.open ? upFill : downFill} />
@@ -216,7 +216,6 @@ export class StockChart extends React.Component<IStockChartProps, IStockChartSta
 
                     <BarSeries
                         yAccessor={(d) => d.volume}
-                        stroke={false}
                         fillStyle={volumeStroke} />
 
                     <LineSeries
