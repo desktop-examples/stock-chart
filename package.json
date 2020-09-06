@@ -20,7 +20,7 @@
     "chart"
   ],
   "author": "Reactive Markets",
-  "license": "Apache",
+  "license": "Apache-2.0",
   "dependencies": {
     "d3-dsv": "^2.0.0",
     "d3-format": "^2.0.0",
