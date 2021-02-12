@@ -40,7 +40,7 @@
     "@types/d3-time-format": "^3.0.0",
     "@types/debug": "4.1.5",
     "@types/moment-timezone": "^0.5.30",
-    "@types/react": "^17.0.1",
+    "@types/react": "^17.0.2",
     "@types/react-dom": "^16.9.9",
     "acorn": "^8.0.5",
     "clean-webpack-plugin": "^3.0.0",
