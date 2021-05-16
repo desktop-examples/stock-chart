@@ -51,7 +51,7 @@
     "html-webpack-template": "^6.2.0",
     "mini-css-extract-plugin": "^1.6.0",
     "offline-plugin": "^5.0.7",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.5",
     "postcss-loader": "^4.2.0",
     "terser-webpack-plugin": "^4.2.3",
     "ts-loader": "^8.2.0",
