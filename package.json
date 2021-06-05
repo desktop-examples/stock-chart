@@ -23,7 +23,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "d3-dsv": "^2.0.0",
-    "d3-format": "^3.0.0",
+    "d3-format": "^3.0.1",
     "d3-time-format": "^3.0.0",
     "debug": "^4.3.1",
     "mobx": "^5.15.7",
