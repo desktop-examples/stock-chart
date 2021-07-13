@@ -1,0 +1,9 @@
+{
+    "name": "Stock Chart",
+    "short_name": "Stock Chart",
+    "start_url": "/stock-chart",
+    "theme_color": "#1d1d26",
+    "background_color": "#1d1d26",
+    "display": "standalone",
+    "orientation": "portrait-primary"
+}
